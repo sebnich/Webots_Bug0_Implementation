@@ -1,0 +1,65 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  info [
+    "Pioneer 3DX (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  title "Pioneer 3-DX with blinking LEDs moving according to a Braitenberg rule"
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.5254314368218814 0.7861057857749261 0.32551420671067355 1.339241041708442
+  position 10.140826334954854 8.899019591637936 5.903776044256596
+  follow "Pioneer 3-DX"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 6 6
+  floorTileSize 2 2
+  wallThickness 0.1
+  wallHeight 0.4
+  wallAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/red_brick_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    textureTransform TextureTransform {
+      scale 11 13
+    }
+  }
+}
+CardboardBox {
+  translation -1.48831 0.15 0.352735
+  size 0.3 0.3 0.6
+}
+DEF PIONEER_3DX Pioneer3dx {
+  hidden position_0_0 0.003119538243385302
+  hidden position_0_1 5444.0772612576675
+  hidden position_0_2 925.9354115999373
+  hidden linearVelocity_0 -0.09423883904333787 -3.1880727627110195e-07 0.23743276521375253
+  hidden angularVelocity_0 -2.693032548805272e-05 0.00015558605002315054 6.511293000588297e-05
+  hidden rotation_1 0 1 0 0.003119538243317514
+  hidden position_1_0 -2107.111998761698
+  hidden linearVelocity_1 -0.09430798873309537 -4.107172593561597e-07 0.23740963409628332
+  hidden angularVelocity_1 -3.307287823086753e-05 -0.0006747431379272261 8.228079170497623e-05
+  hidden rotation_2 1 0 0 4.038264450643024
+  hidden linearVelocity_2 -0.09435851770614832 -3.020427211994961e-07 0.23739426181292944
+  hidden angularVelocity_2 6.330679356452005 -0.0005245609261065249 2.5158099905743785
+  hidden rotation_4 -1 0 0 2.838785240145598
+  hidden linearVelocity_4 -0.09423725091173589 1.1129182718937523e-05 0.2374435178308172
+  hidden angularVelocity_4 2.435343288477712 0.00014132201489298058 0.9661823718841076
+  hidden rotation_9 1 0 0 3.976013862641488
+  hidden linearVelocity_9 -0.09415625270459209 -1.1644249682447266e-05 0.23745278980541512
+  hidden angularVelocity_9 2.4353243315325765 0.00010586815280113848 0.9662191271640799
+  translation 1.8113962567178856 0.09492488796055515 0.45701257706301324
+  rotation 0.0027994853347107817 0.9998893605320236 -0.014609229162478725 2.7639640537809407
+  controller "my_controller_python"
+}

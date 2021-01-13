@@ -1,0 +1,91 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  info [
+    "Pioneer 3DX (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  title "Pioneer 3-DX "
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.9998321201722664 -0.016061307439206987 -0.00881849619685252 0.8050847730805306
+  position 0.20821000712086457 13.73787207600087 13.640858925866935
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.5 0 -0.5
+  floorSize 9 9
+  floorTileSize 2 2
+  wallThickness 0.1
+  wallHeight 0.5
+  wallAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/red_brick_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    textureTransform TextureTransform {
+      scale 11 13
+    }
+  }
+}
+Ball {
+  translation -0.1 0.2969930191136694 -1.66
+  radius 0.3
+}
+Armchair {
+  translation 3.29 0 -0.0100014
+  rotation 0 1 0 1.5708
+}
+WoodenBox {
+  translation 1.73 0.13 1.58
+  rotation 0 1 0 -0.523595307179586
+  name "wooden box(3)"
+  size 2.9 0.3 0.05
+}
+Solid {
+  translation 1.96 0 -1.98
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Cone {
+        height 0.01
+      }
+    }
+  ]
+}
+WallFollowingPioneer3dx {
+  translation -2.97926501208863 0.0811162845661309 2.9992035218740534
+  rotation 0.5313721799532045 0.8352262828556929 0.14156504794207336 0.0443503
+  controller "A6_controller_v2"
+  extensionSlot [
+    GPS {
+    }
+  ]
+}
+WoodenBox {
+  translation 0.902828 0.13 -0.477281
+  rotation 0 1 0 2.61799
+  size 0.9 0.3 0.5
+}
+WoodenBox {
+  translation -1.08922 0.13 -0.494157
+  rotation 0 1 0 2.0944
+  name "wooden box(2)"
+  size 0.9 0.3 0.5
+}
+WoodenBox {
+  translation -1.39867 0.13 1.43776
+  rotation 0 1 0 2.618
+  name "wooden box(1)"
+  size 1.3 0.3 0.5
+}

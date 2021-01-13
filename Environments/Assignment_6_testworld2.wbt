@@ -1,0 +1,83 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  info [
+    "Pioneer 3DX (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  title "Pioneer 3-DX "
+  coordinateSystem "NUE"
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.9995664995722658 -0.026595866525517858 -0.012628254693521978 0.7552556491060071
+  position 0.2932016910007077 16.434154063893118 18.363304116648198
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  translation 0.5 0 -0.5
+  floorSize 9 9
+  floorTileSize 2 2
+  wallThickness 0.1
+  wallHeight 0.5
+  wallAppearance PBRAppearance {
+    baseColorMap ImageTexture {
+      url [
+        "textures/red_brick_wall.jpg"
+      ]
+    }
+    roughness 1
+    metalness 0
+    textureTransform TextureTransform {
+      scale 11 13
+    }
+  }
+}
+Solid {
+  translation 1.96 0 -1.98
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0 0 1
+      }
+      geometry Cone {
+        height 0.01
+      }
+    }
+  ]
+}
+WallFollowingPioneer3dx {
+  translation -3 -0.0704978 3
+  rotation 0.13678296291178335 0.9675297376577335 0.21254794236837712 0.0996437
+  controller "void"
+  extensionSlot [
+    GPS {
+    }
+  ]
+}
+WoodenBox {
+  translation -1.03828 0.13 1.28212
+  rotation 0 -1 0 1.309
+  size 3 0.3 0.1
+}
+WoodenBox {
+  translation -2.18665 0.13 0.287896
+  rotation 0 1 0 -2.6179953071795863
+  name "wooden box(3)"
+  size 1.8 0.3 0.1
+}
+WoodenBox {
+  translation -1.8413 0.13 1.78167
+  rotation 0 -1 0 -2.3562053071795863
+  name "wooden box(1)"
+  size 3 0.3 0.3
+}
+WoodenBox {
+  translation 0.442589 0.13 -0.502234
+  rotation 0 1 0 2.8798
+  name "wooden box(2)"
+  size 1.3 0.3 0.3
+}
